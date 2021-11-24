@@ -1,4 +1,4 @@
-import { Text, UserCircle, Report } from "neetouiIcons";
+import { Text, UserCircle, Inbox } from "neetouiIcons";
 
 export const APP_NAME = "Wheel";
 
@@ -18,8 +18,8 @@ export const SIDENAV_LINKS = [
     icon: UserCircle,
   },
   {
-    label: "Reports",
-    to: "#",
-    icon: Report,
+    label: "Settings",
+    to: "/settings",
+    icon: Inbox,
   },
 ];
