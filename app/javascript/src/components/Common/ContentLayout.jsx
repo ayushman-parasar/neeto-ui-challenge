@@ -2,9 +2,9 @@ import React from "react";
 
 import { Button, Input } from "neetoui/v2";
 import { Header, Container } from "neetoui/v2/layouts";
-import { Search } from "neetouiIcons";
+import { Search, Plus } from "neetouiIcons";
 
-function ContentLayout({ showMenu, setShowMenu, title }) {
+function ContentLayout({ showSubMenu, setShowSubMenu, title, displayContent }) {
   const fullTitle = `All ${title}s`;
   return (
     <Container>
@@ -15,13 +15,13 @@ function ContentLayout({ showMenu, setShowMenu, title }) {
               prefix={<Search />}
               placeholder="Search Name, Email, Phone Number, Etc"
             />
-            <Button label={`Add ${title}`} icon="ri-add-line" size="large" />
+            <Button label={`Add ${title}`} icon={Plus} size="large" />
           </div>
         }
-        menuBarToggle={() => setShowMenu(!showMenu)}
+        menuBarToggle={() => setShowSubMenu(!showSubMenu)}
         title={fullTitle}
       />
-      <h2>ContentTable</h2>
+      {displayContent()}
     </Container>
   );
 }

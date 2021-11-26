@@ -1,21 +1,33 @@
 export const NOTES = [
   {
-    title: "Random text just to fill the page.",
+    title: "How to claim the warranty?",
     description:
-      "I am in the process of developing a few new websites for some clients. I have found that they are not always, um, shall we say, ‘Timely’ when it comes to supply me with the actual copy/content for the site. As you can imagine, ",
+      '"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn\'t getting',
     created_at: "2021-11-21T07:08:32.332Z",
   },
   {
-    title: "Random text just to fill the page.",
+    title: "How to claim the warranty?",
     description:
-      "I am in the process of developing a few new websites for some clients. I have found that they are not always, um, shall we say, ‘Timely’ when it comes to supply me with the actual copy/content for the site. As you can imagine, ",
-    created_at: "2021-11-21T07:09:32.332Z",
+      '"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn\'t getting',
+    created_at: "2021-11-21T07:08:32.332Z",
   },
   {
-    title: "Random text just to fill the page.",
+    title: "How to claim the warranty?",
     description:
-      "I am in the process of developing a few new websites for some clients. I have found that they are not always, um, shall we say, ‘Timely’ when it comes to supply me with the actual copy/content for the site. As you can imagine, ",
-    created_at: "2021-11-21T07:09:32.332Z",
+      '"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn\'t getting',
+    created_at: "2021-11-21T07:08:32.332Z",
+  },
+  {
+    title: "How to claim the warranty?",
+    description:
+      '"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn\'t getting',
+    created_at: "2021-11-21T07:08:32.332Z",
+  },
+  {
+    title: "How to claim the warranty?",
+    description:
+      '"Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn\'t getting',
+    created_at: "2021-11-21T07:08:32.332Z",
   },
 ];
 

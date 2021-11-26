@@ -4,14 +4,14 @@ import { Typography } from "neetoui/v2";
 import { MenuBar } from "neetoui/v2/layouts";
 import { Search, Settings, Plus } from "neetouiIcons";
 
-function SubMenu({ showMenu, title, tabs, segments, tags }) {
+function SubMenu({ showSubMenu, title, tabs, segments, tags }) {
   const [isSegmentSearchCollapsed, setIsSegmentSearchCollapsed] =
     useState(true);
   const [isTagSearchCollapsed, setIsTagSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
-      <MenuBar showMenu={showMenu} title={title}>
+      <MenuBar showMenu={showSubMenu} title={title}>
         {tabs &&
           tabs.map((tab, index) => (
             <MenuBar.Block label={tab.label} count={tab.count} key={index} />
@@ -38,6 +38,7 @@ function SubMenu({ showMenu, title, tabs, segments, tags }) {
           collapse={isSegmentSearchCollapsed}
           onCollapse={() => setIsSegmentSearchCollapsed(true)}
         />
+
         {segments &&
           segments.map((segment, index) => (
             <MenuBar.Block
@@ -73,6 +74,7 @@ function SubMenu({ showMenu, title, tabs, segments, tags }) {
           collapse={isTagSearchCollapsed}
           onCollapse={() => setIsTagSearchCollapsed(true)}
         />
+
         {tags &&
           tags.map((tag, index) => (
             <MenuBar.Block label={tag.label} count={tag.count} key={index} />

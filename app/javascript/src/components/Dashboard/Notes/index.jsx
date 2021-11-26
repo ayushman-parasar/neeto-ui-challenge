@@ -3,24 +3,27 @@ import React, { useState } from "react";
 import ContentLayout from "components/Common/ContentLayout";
 import SubMenu from "components/Common/SubMenu";
 
-import { TABS, SEGMENTS, TAGS } from "./constants";
+import { TABS, SEGMENTS, TAGS, NOTES } from "./constants";
+import NoteTable from "./NoteTable";
 
 const Notes = () => {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showSubMenu, setShowSubMenu] = useState(true);
+  const displayNotes = () => <NoteTable notes={NOTES} />;
 
   return (
     <>
       <SubMenu
-        showMenu={showMenu}
+        showSubMenu={showSubMenu}
         title="Notes"
         tabs={TABS}
         segments={SEGMENTS}
         tags={TAGS}
       />
       <ContentLayout
-        setShowMenu={setShowMenu}
-        showMenu={showMenu}
+        setShowSubMenu={setShowSubMenu}
+        showSubMenu={showSubMenu}
         title="Note"
+        displayContent={displayNotes}
       />
     </>
   );

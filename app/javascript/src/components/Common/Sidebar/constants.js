@@ -23,3 +23,5 @@ export const SIDENAV_LINKS = [
     icon: Inbox,
   },
 ];
+
+export const IMAGEURL = "https://i.pravatar.cc/150?img=2";
