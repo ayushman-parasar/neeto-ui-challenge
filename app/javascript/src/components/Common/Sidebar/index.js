@@ -9,7 +9,7 @@ import { resetAuthTokens } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
-import { APP_NAME, SIDENAV_LINKS } from "./constants";
+import { APP_NAME, SIDENAV_LINKS, IMAGEURL } from "./constants";
 
 const Sidenav = () => {
   const history = useHistory();
@@ -56,7 +56,7 @@ const Sidenav = () => {
       }}
       profileInfo={{
         name: `${user.first_name} ${user.last_name}`,
-        imageUrl: user.profile_image_path,
+        imageUrl: IMAGEURL,
         email: user.email,
         dropdownProps,
       }}
