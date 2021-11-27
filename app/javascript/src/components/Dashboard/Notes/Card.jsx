@@ -5,7 +5,7 @@ import { MenuVertical, Clock } from "neetouiIcons";
 
 import { IMAGEURL } from "components/Common/Sidebar/constants";
 
-const Card = ({ note }) => {
+const Card = ({ note, setShowDeleteAlert }) => {
   const TimeStamp = () => {
     return (
       <div className="flex items-center">
@@ -41,7 +41,7 @@ const Card = ({ note }) => {
           icon={MenuVertical}
         >
           <li>Edit</li>
-          <li>Delete</li>
+          <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
         </Dropdown>
       </div>
       <Typography style="body2" className="text-gray-500">
