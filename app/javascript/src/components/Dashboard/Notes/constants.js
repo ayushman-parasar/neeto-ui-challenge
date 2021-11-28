@@ -79,3 +79,45 @@ export const TAGS = [
     count: 60,
   },
 ];
+
+export const FORMTAGS = [
+  {
+    label: "Getting Started",
+    value: "getting_started",
+  },
+  {
+    label: "Onboarding",
+    value: "onboarding",
+  },
+  {
+    label: "User Flow",
+    value: "user_flow",
+  },
+  {
+    label: "UX",
+    value: "ux",
+  },
+  {
+    label: "Bugs",
+    value: "bugs",
+  },
+  {
+    label: "V2",
+    value: "v2",
+  },
+];
+
+export const FORMCONTACTS = [
+  {
+    label: "Simon Smith",
+    value: "simon_smith",
+  },
+  {
+    label: "Daemon Smith",
+    value: "daemon_smith",
+  },
+  {
+    label: "Roger Smith",
+    value: "roger_smith",
+  },
+];
