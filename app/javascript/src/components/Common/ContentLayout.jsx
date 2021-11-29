@@ -4,8 +4,15 @@ import { Button, Input } from "neetoui/v2";
 import { Header, Container } from "neetoui/v2/layouts";
 import { Search, Plus } from "neetouiIcons";
 
-function ContentLayout({ showSubMenu, setShowSubMenu, title, displayContent }) {
+function ContentLayout({
+  showSubMenu,
+  setShowSubMenu,
+  title,
+  displayContent,
+  setIsCreatePaneOpen,
+}) {
   const fullTitle = `All ${title}s`;
+
   return (
     <Container>
       <Header
@@ -15,7 +22,12 @@ function ContentLayout({ showSubMenu, setShowSubMenu, title, displayContent }) {
               prefix={<Search />}
               placeholder="Search Name, Email, Phone Number, Etc"
             />
-            <Button label={`Add ${title}`} icon={Plus} size="large" />
+            <Button
+              label={`Add ${title}`}
+              icon={Plus}
+              size="large"
+              onClick={() => setIsCreatePaneOpen(true)}
+            />
           </div>
         }
         menuBarToggle={() => setShowSubMenu(!showSubMenu)}
