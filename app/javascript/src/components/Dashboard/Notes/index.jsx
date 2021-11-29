@@ -35,20 +35,6 @@ const Notes = () => {
 
   const displayNotes = () => <NoteTable notes={notes} />;
 
-  const displayCreatePane = title => {
-    return title == "Note" ? (
-      <NewNotePane
-        fetchNotes={fetchNotes}
-        showPane={isCreatePaneOpen}
-        setShowPane={setIsCreatePaneOpen}
-        contacts={FORMCONTACTS}
-        tags={FORMTAGS}
-      />
-    ) : (
-      "null"
-    );
-  };
-
   if (loading) {
     return <PageLoader />;
   }
@@ -81,7 +67,13 @@ const Notes = () => {
           primaryActionLabel="Add New Note"
         />
       )}
-      {displayCreatePane("Note")}
+      <NewNotePane
+        fetchNotes={fetchNotes}
+        showPane={isCreatePaneOpen}
+        setShowPane={setIsCreatePaneOpen}
+        contacts={FORMCONTACTS}
+        tags={FORMTAGS}
+      />
     </>
   );
 };
