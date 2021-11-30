@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Table, Dropdown, Avatar, Typography } from "neetoui/v2";
 import { MenuHorizontal } from "neetouiIcons";
 
-const ContactsTable = ({ setShowDeleteAlert, contacts }) => {
+const ContactsTable = ({ setIsDeleteAlertOpen, contacts }) => {
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   return (
@@ -61,7 +61,7 @@ const ContactsTable = ({ setShowDeleteAlert, contacts }) => {
           render: () => (
             <Dropdown icon={MenuHorizontal} buttonStyle="icon" autoWidth>
               <li>Edit</li>
-              <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
+              <li onClick={() => setIsDeleteAlertOpen(true)}>Delete</li>
             </Dropdown>
           ),
           title: "",

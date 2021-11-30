@@ -13,7 +13,7 @@ import NewContact from "./Pane/CreateContact";
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
 
@@ -34,7 +34,7 @@ const Contacts = () => {
   const displayContacts = () => {
     return (
       <ContactsTable
-        setShowDeleteAlert={setShowDeleteAlert}
+        setIsDeleteAlertOpen={setIsDeleteAlertOpen}
         contacts={contacts}
       />
     );
@@ -55,8 +55,8 @@ const Contacts = () => {
         setIsCreatePaneOpen={setIsCreatePaneOpen}
       />
       <DeleteAlert
-        isAlertOpen={showDeleteAlert}
-        setIsAlertOpen={setShowDeleteAlert}
+        isAlertOpen={isDeleteAlertOpen}
+        setIsAlertOpen={setIsDeleteAlertOpen}
         item="Contact"
       />
       <NewContact

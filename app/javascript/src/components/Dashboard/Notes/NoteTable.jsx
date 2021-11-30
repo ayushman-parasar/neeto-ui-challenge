@@ -5,7 +5,8 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import Card from "./Card";
 
 export default function NoteTable({ notes = [] }) {
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
+
   return (
     <>
       <div className="w-full">
@@ -14,13 +15,13 @@ export default function NoteTable({ notes = [] }) {
             <Card
               note={note}
               key={index}
-              setShowDeleteAlert={setShowDeleteAlert}
+              setIsDeleteAlertOpen={setIsDeleteAlertOpen}
             />
           ))}
       </div>
       <DeleteAlert
-        isAlertOpen={showDeleteAlert}
-        setIsAlertOpen={setShowDeleteAlert}
+        isAlertOpen={isDeleteAlertOpen}
+        setIsAlertOpen={setIsDeleteAlertOpen}
         item="Note"
       />
     </>

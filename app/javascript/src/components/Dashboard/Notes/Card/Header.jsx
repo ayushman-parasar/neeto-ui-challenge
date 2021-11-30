@@ -3,7 +3,7 @@ import React from "react";
 import { Typography, Dropdown } from "neetoui/v2";
 import { MenuVertical } from "neetouiIcons";
 
-const Header = ({ note, setShowDeleteAlert }) => {
+const Header = ({ note, setIsDeleteAlertOpen }) => {
   return (
     <div className="flex justify-between">
       <Typography className="" style="h4" weight="semi-bold">
@@ -20,7 +20,7 @@ const Header = ({ note, setShowDeleteAlert }) => {
         icon={MenuVertical}
       >
         <li>Edit</li>
-        <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
+        <li onClick={() => setIsDeleteAlertOpen(true)}>Delete</li>
       </Dropdown>
     </div>
   );
