@@ -6,14 +6,16 @@ import ContentLayout from "components/Common/ContentLayout";
 import DeleteAlert from "components/Common/DeleteAlert";
 import SubMenu from "components/Common/SubMenu";
 
-import { TABS, CONTACTS } from "./constants";
+import { TABS, CONTACTS, ROLES } from "./constants";
 import ContactsTable from "./ContactsTable";
+import NewContact from "./Pane/CreateContact";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
   const [showSubMenu, setShowSubMenu] = useState(true);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
 
   useEffect(() => {
     fetchContacts();
@@ -50,11 +52,18 @@ const Contacts = () => {
         showSubMenu={showSubMenu}
         title="Contact"
         displayContent={displayContacts}
+        setIsCreatePaneOpen={setIsCreatePaneOpen}
       />
       <DeleteAlert
         isAlertOpen={showDeleteAlert}
         setIsAlertOpen={setShowDeleteAlert}
         item="Contact"
+      />
+      <NewContact
+        fetchContacts={fetchContacts}
+        showPane={isCreatePaneOpen}
+        setShowPane={setIsCreatePaneOpen}
+        roles={ROLES}
       />
     </>
   );
