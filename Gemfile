@@ -59,6 +59,9 @@ group :development, :test do
 
   # For auto-generating demo data
   gem "faker", "~> 2.19"
+
+  # Database
+  gem "sqlite3", "~> 1.4"
 end
 
 group :development, :staging, :heroku do
@@ -104,3 +107,5 @@ group :test do
   # Minitest reporter plugin for CircleCI.
   gem "minitest-ci"
 end
+# Production database
+gem "pg", group: [:production]
