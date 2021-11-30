@@ -19,4 +19,10 @@ export default {
     contact: {},
     tags: [],
   },
+  contactForm: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: {},
+  },
 };
