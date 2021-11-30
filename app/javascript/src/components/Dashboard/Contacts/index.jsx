@@ -12,7 +12,7 @@ import NewContact from "./Pane/CreateContact";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
-  const [showSubMenu, setShowSubMenu] = useState(true);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
@@ -46,10 +46,10 @@ const Contacts = () => {
 
   return (
     <>
-      <SubMenu showSubMenu={showSubMenu} tabs={TABS} title="Contacts" />
+      <SubMenu isSubMenuOpen={isSubMenuOpen} tabs={TABS} title="Contacts" />
       <ContentLayout
-        setShowSubMenu={setShowSubMenu}
-        showSubMenu={showSubMenu}
+        setIsSubMenuOpen={setIsSubMenuOpen}
+        isSubMenuOpen={isSubMenuOpen}
         title="Contact"
         displayContent={displayContacts}
         setIsCreatePaneOpen={setIsCreatePaneOpen}

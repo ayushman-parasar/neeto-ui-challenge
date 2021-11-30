@@ -15,7 +15,7 @@ import NoteTable from "./NoteTable";
 const Notes = () => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showSubMenu, setShowSubMenu] = useState(true);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
 
   useEffect(() => {
@@ -44,15 +44,15 @@ const Notes = () => {
       {notes.length ? (
         <>
           <SubMenu
-            showSubMenu={showSubMenu}
+            isSubMenuOpen={isSubMenuOpen}
             title="Notes"
             tabs={TABS}
             segments={SEGMENTS}
             tags={TAGS}
           />
           <ContentLayout
-            setShowSubMenu={setShowSubMenu}
-            showSubMenu={showSubMenu}
+            setIsSubMenuOpen={setIsSubMenuOpen}
+            isSubMenuOpen={isSubMenuOpen}
             title="Note"
             displayContent={displayNotes}
             setIsCreatePaneOpen={setIsCreatePaneOpen}
