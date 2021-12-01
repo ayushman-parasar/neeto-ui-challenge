@@ -9,8 +9,8 @@ import SubMenu from "components/Common/SubMenu";
 import { FORM_CONTACTS, FORM_TAGS } from "components/Dashboard/Notes/constants";
 
 import { TABS, SEGMENTS, TAGS, NOTES } from "./constants";
+import ListNotes from "./ListNotes";
 import NewNote from "./NewNote";
-import NoteTable from "./NoteTable";
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
@@ -54,7 +54,7 @@ const Notes = () => {
             title="Note"
             setIsCreatePaneOpen={setIsCreatePaneOpen}
           >
-            <NoteTable notes={notes} />
+            <ListNotes notes={notes} />
           </ContentLayout>
         </>
       ) : (

@@ -4,7 +4,7 @@ import DeleteAlert from "components/Common/DeleteAlert";
 
 import Card from "./Card";
 
-export default function NoteTable({ notes = [] }) {
+export default function ListNotes({ notes = [] }) {
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
   return (
