@@ -46,6 +46,7 @@ export default function Create({
               <Input
                 label="Title"
                 name="title"
+                size="large"
                 required
                 placeholder="Enter title"
               />

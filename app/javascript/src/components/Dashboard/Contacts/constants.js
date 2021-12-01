@@ -1,3 +1,5 @@
+import * as Yup from "yup";
+
 export const TABS = [
   {
     label: "All",
@@ -114,3 +116,17 @@ export const ROLES = [
     value: "hr",
   },
 ];
+
+export const CONTACT_FORM_INTIAL_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  role: null,
+};
+
+export const CONTACT_FORM_VALIDATION_SCHEMA = Yup.object().shape({
+  firstName: Yup.string().required("First name is required"),
+  lastName: Yup.string().required("Last name is required"),
+  email: Yup.string().required("Email is required"),
+  role: Yup.object().required("Role is required").nullable(),
+});
