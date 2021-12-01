@@ -5,11 +5,11 @@ import { Header, Container } from "neetoui/v2/layouts";
 import { Search, Plus } from "neetouiIcons";
 
 function ContentLayout({
-  showSubMenu,
-  setShowSubMenu,
+  isSubMenuOpen,
+  setIsSubMenuOpen,
   title,
-  displayContent,
   setIsCreatePaneOpen,
+  children,
 }) {
   const fullTitle = `All ${title}s`;
 
@@ -30,10 +30,10 @@ function ContentLayout({
             />
           </div>
         }
-        menuBarToggle={() => setShowSubMenu(!showSubMenu)}
+        menuBarToggle={() => setIsSubMenuOpen(!isSubMenuOpen)}
         title={fullTitle}
       />
-      {displayContent()}
+      {children}
     </Container>
   );
 }

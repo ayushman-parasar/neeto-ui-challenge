@@ -4,14 +4,14 @@ import { Typography } from "neetoui/v2";
 import { MenuBar } from "neetoui/v2/layouts";
 import { Search, Settings, Plus } from "neetouiIcons";
 
-function SubMenu({ showSubMenu, title, tabs, segments, tags }) {
+function SubMenu({ isSubMenuOpen, title, tabs, segments, tags }) {
   const [isSegmentSearchCollapsed, setIsSegmentSearchCollapsed] =
     useState(true);
   const [isTagSearchCollapsed, setIsTagSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
-      <MenuBar showMenu={showSubMenu} title={title}>
+      <MenuBar showMenu={isSubMenuOpen} title={title}>
         {tabs &&
           tabs.map((tab, index) => (
             <MenuBar.Block label={tab.label} count={tab.count} key={index} />

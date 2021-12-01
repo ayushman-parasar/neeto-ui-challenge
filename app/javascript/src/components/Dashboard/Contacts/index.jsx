@@ -7,13 +7,13 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import SubMenu from "components/Common/SubMenu";
 
 import { TABS, CONTACTS, ROLES } from "./constants";
-import ContactsTable from "./ContactsTable";
-import NewContact from "./Pane/CreateContact";
+import ListContacts from "./ListContacts";
+import NewContact from "./NewContact";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
-  const [showSubMenu, setShowSubMenu] = useState(true);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
+  const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
 
@@ -31,14 +31,6 @@ const Contacts = () => {
       setLoading(false);
     }
   };
-  const displayContacts = () => {
-    return (
-      <ContactsTable
-        setShowDeleteAlert={setShowDeleteAlert}
-        contacts={contacts}
-      />
-    );
-  };
 
   if (loading) {
     return <PageLoader />;
@@ -46,17 +38,21 @@ const Contacts = () => {
 
   return (
     <>
-      <SubMenu showSubMenu={showSubMenu} tabs={TABS} title="Contacts" />
+      <SubMenu isSubMenuOpen={isSubMenuOpen} tabs={TABS} title="Contacts" />
       <ContentLayout
-        setShowSubMenu={setShowSubMenu}
-        showSubMenu={showSubMenu}
+        setIsSubMenuOpen={setIsSubMenuOpen}
+        isSubMenuOpen={isSubMenuOpen}
         title="Contact"
-        displayContent={displayContacts}
         setIsCreatePaneOpen={setIsCreatePaneOpen}
-      />
+      >
+        <ListContacts
+          setIsDeleteAlertOpen={setIsDeleteAlertOpen}
+          contacts={contacts}
+        />
+      </ContentLayout>
       <DeleteAlert
-        isAlertOpen={showDeleteAlert}
-        setIsAlertOpen={setShowDeleteAlert}
+        isAlertOpen={isDeleteAlertOpen}
+        setIsAlertOpen={setIsDeleteAlertOpen}
         item="Contact"
       />
       <NewContact
