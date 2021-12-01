@@ -8,8 +8,8 @@ function ContentLayout({
   isSubMenuOpen,
   setIsSubMenuOpen,
   title,
-  displayContent,
   setIsCreatePaneOpen,
+  children,
 }) {
   const fullTitle = `All ${title}s`;
 
@@ -33,7 +33,7 @@ function ContentLayout({
         menuBarToggle={() => setIsSubMenuOpen(!isSubMenuOpen)}
         title={fullTitle}
       />
-      {displayContent()}
+      {children}
     </Container>
   );
 }

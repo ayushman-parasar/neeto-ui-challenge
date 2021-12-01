@@ -6,15 +6,15 @@ import { PageLoader } from "neetoui/v2";
 import ContentLayout from "components/Common/ContentLayout";
 import EmptyState from "components/Common/EmptyState";
 import SubMenu from "components/Common/SubMenu";
-import { FORMCONTACTS, FORMTAGS } from "components/Dashboard/Notes/constants";
-import NewNotePane from "components/Dashboard/Notes/Pane/CreateNote";
+import { FORM_CONTACTS, FORM_TAGS } from "components/Dashboard/Notes/constants";
 
 import { TABS, SEGMENTS, TAGS, NOTES } from "./constants";
+import NewNote from "./NewNote";
 import NoteTable from "./NoteTable";
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
   const [isCreatePaneOpen, setIsCreatePaneOpen] = useState(false);
 
@@ -24,18 +24,16 @@ const Notes = () => {
 
   const fetchNotes = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       setNotes(NOTES);
     } catch (error) {
       logger.error(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
-  const displayNotes = () => <NoteTable notes={notes} />;
-
-  if (loading) {
+  if (isLoading) {
     return <PageLoader />;
   }
 
@@ -54,9 +52,10 @@ const Notes = () => {
             setIsSubMenuOpen={setIsSubMenuOpen}
             isSubMenuOpen={isSubMenuOpen}
             title="Note"
-            displayContent={displayNotes}
             setIsCreatePaneOpen={setIsCreatePaneOpen}
-          />
+          >
+            <NoteTable notes={notes} />
+          </ContentLayout>
         </>
       ) : (
         <EmptyState
@@ -67,12 +66,12 @@ const Notes = () => {
           primaryActionLabel="Add New Note"
         />
       )}
-      <NewNotePane
+      <NewNote
         fetchNotes={fetchNotes}
         showPane={isCreatePaneOpen}
         setShowPane={setIsCreatePaneOpen}
-        contacts={FORMCONTACTS}
-        tags={FORMTAGS}
+        contacts={FORM_CONTACTS}
+        tags={FORM_TAGS}
       />
     </>
   );

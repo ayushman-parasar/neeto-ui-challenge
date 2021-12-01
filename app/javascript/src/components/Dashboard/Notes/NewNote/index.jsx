@@ -2,13 +2,16 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui/v2";
 
-import Form from "./Form";
+import Create from "./Create";
 
-export default function EditNotePane({
+import { NOTE_INITIAL_VALUES } from "../constants";
+
+export default function NewNote({
   fetchNotes,
   showPane,
   setShowPane,
-  note,
+  contacts,
+  tags,
 }) {
   const onClose = () => setShowPane(false);
 
@@ -16,10 +19,17 @@ export default function EditNotePane({
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Edit Note
+          Add New Note
         </Typography>
       </Pane.Header>
-      <Form onClose={onClose} refetch={fetchNotes} note={note} isEdit={true} />
+      <Create
+        onClose={onClose}
+        refetch={fetchNotes}
+        note={NOTE_INITIAL_VALUES}
+        contacts={contacts}
+        tags={tags}
+        isEdit={false}
+      />
     </Pane>
   );
 }

@@ -6,9 +6,10 @@ import { Input, Select, Textarea } from "neetoui/v2/formik";
 import { Check } from "neetouiIcons";
 
 import notesApi from "apis/notes";
-import formValidationSchemas from "constants/formValidationSchemas";
 
-export default function NoteForm({
+import { NOTE_VALIDATION_SCHEMA } from "../constants";
+
+export default function Create({
   onClose,
   refetch,
   note,
@@ -34,7 +35,9 @@ export default function NoteForm({
     <Formik
       initialValues={note}
       onSubmit={handleSubmit}
-      validationSchema={formValidationSchemas.notesForm}
+      validationSchema={NOTE_VALIDATION_SCHEMA}
+      validateOnChange={false}
+      validateOnBlur={false}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">

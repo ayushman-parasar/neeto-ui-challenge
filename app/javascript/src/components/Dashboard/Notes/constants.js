@@ -1,3 +1,5 @@
+import * as Yup from "yup";
+
 export const NOTES = [
   {
     title: "How to claim the warranty?",
@@ -80,7 +82,7 @@ export const TAGS = [
   },
 ];
 
-export const FORMTAGS = [
+export const FORM_TAGS = [
   {
     label: "Getting Started",
     value: "getting_started",
@@ -107,7 +109,7 @@ export const FORMTAGS = [
   },
 ];
 
-export const FORMCONTACTS = [
+export const FORM_CONTACTS = [
   {
     label: "Simon Smith",
     value: "simon_smith",
@@ -121,3 +123,17 @@ export const FORMCONTACTS = [
     value: "roger_smith",
   },
 ];
+
+export const NOTE_INITIAL_VALUES = {
+  title: "",
+  description: "",
+  contact: null,
+  tags: null,
+};
+
+export const NOTE_VALIDATION_SCHEMA = Yup.object().shape({
+  title: Yup.string().required("Title is required"),
+  description: Yup.string().required("Description is required"),
+  contact: Yup.object().required("Contact is required").nullable(),
+  tags: Yup.array().required("Tag is required").nullable(),
+});
