@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Table, Dropdown, Avatar, Typography } from "neetoui/v2";
 import { MenuHorizontal } from "neetouiIcons";
 
-const ContactsTable = ({ setIsDeleteAlertOpen, contacts }) => {
+const ListContacts = ({ setIsDeleteAlertOpen, contacts }) => {
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   return (
@@ -77,4 +77,4 @@ const ContactsTable = ({ setIsDeleteAlertOpen, contacts }) => {
   );
 };
 
-export default ContactsTable;
+export default ListContacts;

@@ -7,7 +7,7 @@ import DeleteAlert from "components/Common/DeleteAlert";
 import SubMenu from "components/Common/SubMenu";
 
 import { TABS, CONTACTS, ROLES } from "./constants";
-import ContactsTable from "./ContactsTable";
+import ListContacts from "./ListContacts";
 import NewContact from "./Pane/CreateContact";
 
 const Contacts = () => {
@@ -31,14 +31,6 @@ const Contacts = () => {
       setLoading(false);
     }
   };
-  const displayContacts = () => {
-    return (
-      <ContactsTable
-        setIsDeleteAlertOpen={setIsDeleteAlertOpen}
-        contacts={contacts}
-      />
-    );
-  };
 
   if (loading) {
     return <PageLoader />;
@@ -51,9 +43,13 @@ const Contacts = () => {
         setIsSubMenuOpen={setIsSubMenuOpen}
         isSubMenuOpen={isSubMenuOpen}
         title="Contact"
-        displayContent={displayContacts}
         setIsCreatePaneOpen={setIsCreatePaneOpen}
-      />
+      >
+        <ListContacts
+          setIsDeleteAlertOpen={setIsDeleteAlertOpen}
+          contacts={contacts}
+        />
+      </ContentLayout>
       <DeleteAlert
         isAlertOpen={isDeleteAlertOpen}
         setIsAlertOpen={setIsDeleteAlertOpen}
