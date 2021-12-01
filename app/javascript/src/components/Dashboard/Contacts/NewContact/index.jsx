@@ -2,7 +2,7 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui/v2";
 
-import Form from "./Create";
+import Create from "./Create";
 
 import { CONTACT_FORM_INTIAL_VALUES } from "../constants";
 
@@ -16,7 +16,7 @@ const NewContact = ({ fetchContacts, showPane, setShowPane, roles }) => {
           Add New Contact
         </Typography>
       </Pane.Header>
-      <Form
+      <Create
         onClose={onClose}
         refetch={fetchContacts}
         contact={CONTACT_FORM_INTIAL_VALUES}
