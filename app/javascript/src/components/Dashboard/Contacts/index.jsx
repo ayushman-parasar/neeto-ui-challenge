@@ -8,7 +8,7 @@ import SubMenu from "components/Common/SubMenu";
 
 import { TABS, CONTACTS, ROLES } from "./constants";
 import ListContacts from "./ListContacts";
-import NewContact from "./Pane/CreateContact";
+import NewContact from "./NewContact";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
